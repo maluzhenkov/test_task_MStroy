@@ -6,13 +6,23 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [vue()],
   test: {
-    environment: 'node',
+    environment: 'jsdom',
     globals: true,
     include: ['src/**/*.test.ts'],
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Выносим AG Grid в отдельный чанк, чтобы облегчить основной index.js
+        manualChunks: {
+          agGrid: ['ag-grid-community', 'ag-grid-enterprise', 'ag-grid-vue3'],
+        },
+      },
     },
   },
 })

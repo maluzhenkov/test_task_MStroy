@@ -1,9 +1,4 @@
-export type TreeId = string | number
-
-export type TreeItemBase = {
-  id: TreeId
-  parent: TreeId | null
-}
+import type { TreeId, TreeItemBase } from "@/types/index.types"
 
 /**
  * TreeStore хранит плоский массив элементов и предоставляет удобные методы

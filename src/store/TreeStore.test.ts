@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
-import { TreeStore, type TreeItemBase, type TreeId } from '@/store/TreeStore'
-
-type Item = TreeItemBase & { label: string }
+import { TreeStore } from '@/store/TreeStore'
+import type { Item, TreeId } from '@/types/index.types'
+import { describe, expect, it } from 'vitest'
 
 const baseItems: Item[] = [
   { id: 1, parent: null, label: 'Айтем 1' },

@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import './assets/style.css'
-import App from './App.vue'
+import App from '@/App.vue';
+import '@/assets/style.css';
+import '@/plugins/ag-grid';
+import { createApp } from 'vue';
 
 createApp(App).mount('#app')
